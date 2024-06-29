@@ -1,0 +1,16 @@
+version: '3.8'
+
+name: nest_crud_bug_join
+
+services:
+  db:
+    image: postgres:12.17
+    restart: always
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASS}
+      POSTGRES_DB: ${DB_NAME}
+    ports:
+      - ${DB_PORT}:5432
+    volumes:
+      - ./data:/var/lib/postgresql/data
